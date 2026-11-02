@@ -479,7 +479,7 @@ function constancia() {
       <div class="fila"><span>Repartidores con cobertura habilitada</span><b>${ent(PLATAFORMA.registrados)}</b></div>
       <div class="fila"><span>Vigencia de la póliza</span><b>01/11/2026 – 31/10/2027</b></div>
       <div class="fila"><span>Emitida</span><b>${hoy}</b></div>
-      <div style="display:flex;gap:12px;align-items:center;margin-top:12px">${qr("CNS-2026-11-0042", 72)}<span class="sub">Cualquier fiscal puede verificar la cobertura de un repartidor en tiempo real con su código en <b>rodar…/verificar</b>.</span></div>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:12px">${qr("CNS-2026-11-0042", 72)}<span class="sub">Cualquier fiscal puede verificar la cobertura de un repartidor en tiempo real con su código en <b>rodarsegurosve.vercel.app/#/verificar</b>.</span></div>
     </div>
     <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px" class="no-imprimir"><button class="btn btn-borde" data-cerrar>Cerrar</button><button class="btn btn-osc" onclick="window.print()">Imprimir</button></div>`);
 }
