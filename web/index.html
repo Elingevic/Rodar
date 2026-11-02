@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodar · Tu seguro arranca con tu turno</title>
+<meta name="description" content="Seguro por turno para repartidores y motorizados de plataformas de delivery en Venezuela. Se activa al iniciar la jornada y la plataforma cumple los requisitos de seguro del INTT.">
+<meta name="theme-color" content="#1c1917">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f97316'/%3E%3Ccircle cx='10' cy='21' r='4.5' fill='none' stroke='white' stroke-width='2.6'/%3E%3Ccircle cx='22' cy='21' r='4.5' fill='none' stroke='white' stroke-width='2.6'/%3E%3Cpath d='M10 21l5-9h5l2 9' fill='none' stroke='white' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="barra">
+  <div class="barra-in">
+    <a class="logo" href="#/">
+      <span class="logo-ic"><svg width="18" height="18" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"><circle cx="9" cy="21" r="5"/><circle cx="23" cy="21" r="5"/><path d="M9 21l5-10h6l3 10"/></svg></span>
+      <span class="txt">Roda<b>r</b></span>
+    </a>
+    <nav class="roles" id="roles">
+      <a href="#/repartidor" data-r="repartidor">Repartidor</a>
+      <a href="#/plataforma" data-r="plataforma">Plataforma</a>
+      <a href="#/aseguradora" data-r="aseguradora">Aseguradora</a>
+      <a href="#/verificar" data-r="verificar">Verificar</a>
+    </nav>
+    <button class="reiniciar" id="reiniciar" title="Vuelve a los datos de demostración">↺ Reiniciar demo</button>
+  </div>
+</header>
+<div class="aviso-demo">Prototipo de demostración · AseguraTech26. Las empresas, personas, precios y códigos son ficticios o referenciales.</div>
+<main id="app"></main>
+<script src="app.js"></script>
+</body>
+</html>

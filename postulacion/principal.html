@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Rodar — Propuesta de innovación · AseguraTech26</title>
+<style>
+  @font-face { font-family: Geist; src: url(geist.woff2) format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: GeistMono; src: url(geist-mono.woff2) format("woff2"); font-weight: 100 900; }
+  @page { size: 210mm 297mm; margin: 0; }
+  :root { --r50: #fff7ed; --r100: #ffedd5; --r200: #fed7aa; --r400: #fb923c; --r500: #f97316; --r600: #ea580c; --r700: #c2410c; --t950: #0c0a09; --t900: #1c1917; --t700: #44403c; --t500: #78716c; --t200: #e7e5e4; --t100: #f5f5f4; --verde: #16a34a; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Geist, sans-serif; color: var(--t900); font-size: 10pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pagina { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always; padding: 18mm 17mm 20mm; background: #fff; }
+  .pagina:last-child { page-break-after: auto; }
+  .pie { position: absolute; left: 17mm; right: 17mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: #a8a29e; border-top: 0.3mm solid var(--t200); padding-top: 2.5mm; }
+  .seccion { font-size: 8pt; font-weight: 750; letter-spacing: 0.1em; text-transform: uppercase; color: var(--r600); }
+  h1 { font-size: 24pt; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--t950); margin: 2mm 0 5mm; }
+  h2 { font-size: 13pt; font-weight: 750; letter-spacing: -0.015em; color: var(--t950); margin: 6mm 0 2mm; }
+  h3 { font-size: 10.5pt; font-weight: 700; color: var(--t950); margin-bottom: 1mm; }
+  p { color: #3f3a36; margin-bottom: 2.5mm; }
+  p b, li b, td b { color: var(--t950); }
+  .intro { font-size: 11.5pt; line-height: 1.5; color: #292524; }
+  ul { list-style: none; margin-bottom: 3mm; }
+  li { position: relative; padding-left: 4.5mm; margin-top: 1.4mm; color: #3f3a36; }
+  li::before { content: ""; position: absolute; left: 0; top: 2mm; width: 1.8mm; height: 1.8mm; border-radius: 50%; background: var(--r500); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+  .tarjeta { border: 0.3mm solid var(--t200); border-radius: 3.5mm; padding: 4.5mm 5mm; background: #fafaf9; }
+  .tarjeta .ic { font-size: 17pt; line-height: 1; margin-bottom: 2mm; }
+  .tarjeta .dato { font-size: 15pt; font-weight: 800; letter-spacing: -0.03em; color: var(--r600); line-height: 1.05; margin-bottom: 1.5mm; }
+  .fuente { font-size: 7.5pt; color: var(--t500); margin-top: 1.5mm; }
+  .destacado { background: var(--r50); border: 0.3mm solid var(--r100); border-radius: 3.5mm; padding: 4.5mm 5.5mm; margin: 4mm 0; }
+  .destacado.verde { background: #f0fdf4; border-color: #bbf7d0; }
+  figure { border: 0.3mm solid var(--t200); border-radius: 3mm; overflow: hidden; background: #f7f6f4; }
+  figure img { display: block; width: 100%; }
+  figcaption { font-size: 8pt; color: var(--t500); padding: 2mm 3mm; background: #fff; border-top: 0.3mm solid var(--t200); }
+  figcaption b { color: var(--t950); }
+  .tel { text-align: center; }
+  .tel img { width: 100%; border-radius: 7mm; border: 2.2mm solid var(--t950); display: block; }
+  .tel p { font-size: 8.5pt; margin-top: 2.5mm; color: var(--t700); text-align: left; }
+  .paso { display: flex; gap: 3mm; align-items: baseline; }
+  .num { flex: 0 0 auto; width: 7mm; height: 7mm; border-radius: 50%; background: var(--t900); color: #fff; font-weight: 750; font-size: 9pt; display: inline-flex; align-items: center; justify-content: center; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.8pt; margin: 2mm 0 3mm; }
+  th { text-align: left; font-size: 7.5pt; letter-spacing: 0.05em; text-transform: uppercase; color: var(--t500); background: var(--t100); padding: 2mm 2.5mm; border-bottom: 0.3mm solid var(--t200); }
+  td { padding: 1.8mm 2.5mm; border-bottom: 0.3mm solid #f0efee; color: #3f3a36; vertical-align: top; }
+  td.cod { font-family: GeistMono, monospace; text-align: center; color: var(--t950); font-weight: 600; }
+  .mono { font-family: GeistMono, monospace; }
+  .tl { position: relative; padding-left: 7mm; }
+  .tl::before { content: ""; position: absolute; left: 2.2mm; top: 2mm; bottom: 2mm; width: 0.5mm; background: var(--r200); }
+  .tl .it { position: relative; margin-bottom: 3mm; }
+  .tl .it::before { content: ""; position: absolute; left: -6.3mm; top: 1.2mm; width: 3mm; height: 3mm; border-radius: 50%; background: var(--r500); }
+  .tl .h { font-family: GeistMono, monospace; font-size: 8pt; color: var(--r600); }
+
+  .portada { background: radial-gradient(150mm 110mm at 85% 15%, rgba(249,115,22,.45) 0%, transparent 65%), linear-gradient(160deg, #0c0a09 0%, #1c1917 60%, #292524 100%); color: #fff; padding: 24mm 20mm; display: flex; flex-direction: column; }
+  .portada .logo { font-size: 66pt; font-weight: 800; letter-spacing: -0.045em; line-height: 1; margin-top: 30mm; }
+  .portada .logo b { color: var(--r400); }
+  .portada .lema { font-size: 21pt; font-weight: 700; line-height: 1.2; margin-top: 8mm; letter-spacing: -0.02em; }
+  .portada .lema span { color: var(--r400); }
+  .portada .sub { font-size: 12pt; color: #d6d3d1; margin-top: 6mm; line-height: 1.5; max-width: 155mm; }
+  .portada .datos { margin-top: auto; font-size: 10pt; color: #d6d3d1; line-height: 1.7; }
+  .portada .datos b { color: #fff; }
+  .portada .vista { margin-top: 12mm; border-radius: 4mm; overflow: hidden; border: 0.4mm solid rgba(255,255,255,.15); width: 150mm; }
+  .portada .vista img { width: 100%; display: block; }
+  .chip { display: inline-block; align-self: flex-start; padding: 1.5mm 4mm; border-radius: 99px; background: rgba(255,255,255,0.1); border: 0.3mm solid rgba(255,255,255,0.22); font-size: 9pt; color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- 1. Portada -->
+<section class="pagina portada">
+  <span class="chip">AseguraTech26 · Pitch de innovación</span>
+  <div class="logo">Roda<b>r</b></div>
+  <div class="lema">Tu seguro arranca<br><span>cuando arranca tu turno.</span></div>
+  <p class="sub">Un seguro por jornada para repartidores y motorizados de plataformas de delivery: se activa al conectarse a la app, se paga solo por las horas en la vía y le permite a la plataforma cumplir los seguros que exige el INTT.</p>
+  <div class="vista"><img src="img/landing.jpg" alt=""></div>
+  <div class="datos">
+    <b>Desafío 3:</b> Nuevos modelos de distribución y seguros<br>
+    <b>Desafío 2:</b> Seguros inclusivos, microseguros y masivos<br>
+    <b>Etapa:</b> pre-semilla, con prototipo funcional en línea<br>
+    <b>Prototipo:</b> rodar-seguros.vercel.app<br>
+    Noviembre de 2026
+  </div>
+</section>
+
+<!-- 2. Resumen y problema -->
+<section class="pagina">
+  <div class="seccion">Resumen ejecutivo</div>
+  <h1>El seguro que sigue a la jornada</h1>
+  <p class="intro">Desde agosto de 2026 el INTT exige a las plataformas de delivery y de viajes mantener vigentes un <b>seguro de responsabilidad civil</b> y un <b>seguro médico</b>. Pero los repartidores trabajan por horas, rotan entre apps y muchos se registran sin salir a la calle. <b>Rodar</b> es un seguro colectivo que se <b>activa cuando el repartidor se conecta</b> y se <b>apaga cuando se desconecta</b>: la plataforma paga solo las horas reales, el repartidor trabaja protegido sin trámites y la aseguradora gana un canal masivo con datos de riesgo por hora.</p>
+  <div class="cols3" style="margin:4mm 0">
+    <div class="tarjeta"><div class="ic">📦</div><h3>Para la plataforma</h3><p style="margin:0">Cumple la norma pagando por uso, con constancia para el INTT y control de requisitos de su flota.</p></div>
+    <div class="tarjeta"><div class="ic">🛵</div><h3>Para el repartidor</h3><p style="margin:0">Protección en cada turno, sin costo para él, con reporte de accidentes y clave médica desde el teléfono.</p></div>
+    <div class="tarjeta"><div class="ic">🏢</div><h3>Para la aseguradora</h3><p style="margin:0">Un canal masivo nuevo, prima ligada a la exposición real y datos por hora y zona para tarificar.</p></div>
+  </div>
+
+  <div class="seccion" style="margin-top:5mm">El problema</div>
+  <h1 style="font-size:19pt">La norma ya llegó. El seguro a la medida del repartidor, todavía no.</h1>
+  <div class="cols" style="gap:4mm">
+    <div class="tarjeta"><div class="dato">RC + seguro médico</div><p style="margin:0">El INTT exige a las empresas de delivery y viajes mantener vigentes ambas pólizas, además de Registro Nacional, escuela de conductores y revisiones técnicas.</p><div class="fuente">INTT, agosto de 2026 · El Universal</div></div>
+    <div class="tarjeta"><div class="dato">La plataforma responde</div><p style="margin:0">El INTT considera prestadora del servicio a la empresa dueña de la app, aunque el repartidor use moto propia o alquilada.</p><div class="fuente">INTT, agosto de 2026 · NotiFalcón</div></div>
+    <div class="tarjeta"><div class="dato">270–300 mil</div><p style="margin:0">motos en delivery y transporte móvil, de unos 1,5 millones registradas. Cavecom-e advirtió que los seguros obligatorios subirán la tarifa del delivery.</p><div class="fuente">Cavecom-e · Finanzas Digital, 2026</div></div>
+    <div class="tarjeta"><div class="dato">El más vulnerable</div><p style="margin:0">Los motorizados encabezan las víctimas de accidentes de tránsito y los siniestros se concentran en horas pico, las mismas del delivery.</p><div class="fuente">Observatorio de Seguridad Vial · El Diario</div></div>
+  </div>
+  <div class="destacado"><b>El desajuste:</b> una póliza anual fija por moto cobra las 24 horas de los 365 días, incluso por cuentas registradas que casi no trabajan. Y el 22 de octubre de 2026 el INTT abrió una consulta nacional a motorizados para ajustar la regulación: el producto todavía se puede diseñar a la medida.</div>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>2</span></div>
+</section>
+
+<!-- 3. Solución -->
+<section class="pagina">
+  <div class="seccion">La solución</div>
+  <h1>Cobertura que se enciende y se apaga con el turno</h1>
+  <p class="intro">Rodar se integra a la app de delivery por API. Cuando el repartidor se conecta, la cobertura se activa; cuando se desconecta, se apaga. La plataforma, como <b>tomador</b> de una póliza colectiva, paga por hora con un tope diario.</p>
+
+  <h2>Cómo funciona</h2>
+  <div class="paso"><span class="num">1</span><p><b>La plataforma se integra:</b> su app avisa a Rodar al iniciar y cerrar cada turno, y cuando sube un pasajero en un viaje en moto.</p></div>
+  <div class="paso"><span class="num">2</span><p><b>La cobertura se activa sola:</b> el repartidor no hace trámites. Rodar verifica al registrarlo que su moto tenga el RCV obligatorio vigente.</p></div>
+  <div class="paso"><span class="num">3</span><p><b>Se paga por uso:</b> la prima corre por minuto y se factura mensual a la plataforma. Las cuentas que no trabajan no generan costo.</p></div>
+  <div class="paso"><span class="num">4</span><p><b>Todo es verificable:</b> código de cobertura para fiscales, reporte de siniestros desde el teléfono y constancia de cumplimiento para el INTT.</p></div>
+
+  <h2>Coberturas por turno</h2>
+  <table>
+    <tr><th>Cobertura</th><th>Qué cubre</th><th style="text-align:center">Ramo</th><th>Cuándo</th></tr>
+    <tr><td><b>Responsabilidad civil en reparto</b></td><td>Daños a terceros durante la actividad, como exceso sobre el RCV obligatorio de la moto</td><td class="cod">31</td><td>Todo el turno</td></tr>
+    <tr><td><b>Accidentes personales del repartidor</b></td><td>Gastos médicos, invalidez y muerte, con clave de atención en la red</td><td class="cod">06</td><td>Todo el turno</td></tr>
+    <tr><td><b>Accidentes personales del pasajero</b></td><td>Gastos médicos del pasajero en viajes en moto</td><td class="cod">06</td><td>Solo con pasajero a bordo</td></tr>
+  </table>
+
+  <h2>Los actores</h2>
+  <table>
+    <tr><th style="width:28%">Actor</th><th>Qué hace en Rodar</th></tr>
+    <tr><td><b>Plataforma</b> (tomador)</td><td>Integra la API, ve su flota cubierta en tiempo real, paga por hora y descarga la constancia para el INTT.</td></tr>
+    <tr><td><b>Repartidor</b> (asegurado)</td><td>Trabaja cubierto, muestra su código de verificación y reporta accidentes en 3 pasos.</td></tr>
+    <tr><td><b>Aseguradora</b></td><td>Asume el riesgo; ve exposición por hora, prima devengada y siniestralidad, y gestiona los siniestros.</td></tr>
+    <tr><td><b>Intermediario autorizado</b></td><td>Coloca la póliza colectiva con cada plataforma.</td></tr>
+  </table>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>3</span></div>
+</section>
+
+<!-- 4. Repartidor -->
+<section class="pagina">
+  <div class="seccion">Recorrido · Repartidor</div>
+  <h1>Un turno protegido, de principio a fin</h1>
+  <p class="intro">Así se ve Rodar dentro de la app de delivery. El repartidor no compra nada ni llena formularios: su cobertura sigue a su jornada.</p>
+  <div class="cols3" style="margin-top:5mm;gap:6mm">
+    <div class="tel"><img src="img/tel-on.png" alt=""><p><b>Cobertura activa.</b> Hora de inicio, tiempo en turno y costo acumulado, que paga la plataforma. Con pasajero a bordo se activa su cobertura médica.</p></div>
+    <div class="tel"><img src="img/tel-codigo.png" alt=""><p><b>Mi código.</b> Prueba que tiene cobertura vigente en ese momento, ante un fiscal o la otra parte en un accidente.</p></div>
+    <div class="tel"><img src="img/tel-enviado.png" alt=""><p><b>Reporte en 3 pasos.</b> Qué pasó, quién resultó herido y fotos. Si hay heridos, recibe una clave de atención médica válida 24 horas.</p></div>
+  </div>
+  <div class="destacado" style="margin-top:6mm"><b>Menos fraude por diseño.</b> El turno lo abre la app de la plataforma, no el repartidor, y cada reporte se cruza con la hora y la ubicación registradas del turno.</div>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>4</span></div>
+</section>
+
+<!-- 5. Verificación y constancia -->
+<section class="pagina">
+  <div class="seccion">Recorrido · Verificación y cumplimiento</div>
+  <h1>Cobertura comprobable en la calle y ante el INTT</h1>
+  <p class="intro">Hoy, demostrar que un repartidor está asegurado depende de papeles. Con Rodar, cualquier fiscal, policía o la otra parte de un accidente verifica la cobertura <b>en tiempo real</b>, y la plataforma tiene su constancia lista para el INTT.</p>
+  <div class="cols" style="margin-top:4mm;align-items:start">
+    <figure><img src="img/verificar.png" alt=""><figcaption><b>Verificación pública:</b> muestra solo iniciales, placa, plataforma, aseguradora y desde qué hora está en turno.</figcaption></figure>
+    <div>
+      <figure><img src="img/plat-constancia.png" alt=""><figcaption><b>Constancia para el INTT:</b> tomador, aseguradora, intermediario, ramos, modalidad y vigencia.</figcaption></figure>
+      <div class="destacado verde" style="margin-top:5mm">Si el turno terminó, el mismo código muestra <b>"Sin cobertura activa"</b> y la hora en que se apagó. La verificación nunca expone la cédula ni el teléfono.</div>
+    </div>
+  </div>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>5</span></div>
+</section>
+
+<!-- 6. Plataforma -->
+<section class="pagina">
+  <div class="seccion">Recorrido · Plataforma de delivery</div>
+  <h1>La flota cubierta, en vivo</h1>
+  <p class="intro">El panel de la plataforma muestra cuántos repartidores están cubiertos en este momento, cuánto cuesta el mes y qué falta para cumplir con el INTT.</p>
+  <figure style="margin-top:3mm"><img src="img/plat-kpis.png" alt=""><figcaption><b>Indicadores:</b> repartidores cubiertos ahora, horas del mes, costo y siniestros abiertos.</figcaption></figure>
+  <div class="cols" style="margin-top:5mm;align-items:start">
+    <figure><img src="img/plat-cumplimiento.png" alt=""><figcaption><b>Cumplimiento INTT:</b> pólizas vigentes, certificados de aptitud y RCV de cada moto.</figcaption></figure>
+    <div>
+      <figure><img src="img/plat-ahorro.png" alt=""><figcaption><b>Por hora vs. póliza fija</b> (cifras referenciales de la demo).</figcaption></figure>
+      <p style="margin-top:4mm">En la demo, una flota de <b>1.240 registrados</b> con <b>812 activos</b> en el mes paga <b>$4.677</b> por hora en la vía, frente a <b>$8.680</b> de una póliza fija por moto registrada: <b>46 % menos</b>. El ahorro viene de no pagar por las cuentas que no salieron a la calle.</p>
+    </div>
+  </div>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>6</span></div>
+</section>
+
+<!-- 7. Aseguradora -->
+<section class="pagina">
+  <div class="seccion">Recorrido · Aseguradora</div>
+  <h1>Riesgo medido por hora, no por año</h1>
+  <p class="intro">La aseguradora ve cuántas motos expone en cada momento, la prima devengada y dónde se concentran los siniestros. El reporte del repartidor le llega al instante.</p>
+  <figure style="margin-top:3mm"><img src="img/ase-kpis.png" alt=""><figcaption><b>Indicadores:</b> motos en la vía, prima devengada, siniestralidad y siniestros por gestionar.</figcaption></figure>
+  <figure style="margin-top:5mm"><img src="img/ase-graficos.png" alt=""><figcaption><b>Exposición por hora y mapa de siniestros por día y franja:</b> picos en almuerzo y en la tarde, como el delivery.</figcaption></figure>
+  <figure style="margin-top:5mm"><img src="img/ase-siniestros.png" alt=""><figcaption><b>Siniestros:</b> con ramo, reserva y estado; la aseguradora aprueba y marca pagado.</figcaption></figure>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>7</span></div>
+</section>
+
+<!-- 8. Regulación -->
+<section class="pagina">
+  <div class="seccion">Viabilidad</div>
+  <h1>Construido sobre la regulación venezolana</h1>
+  <h2>Intermediación responsable</h2>
+  <ul>
+    <li><b>Rodar no asume riesgo ni intermedia.</b> El riesgo es de una aseguradora autorizada por la SUDEASEG y la colocación la hace un intermediario autorizado. Rodar es la capa tecnológica.</li>
+    <li><b>Ramos contables:</b> responsabilidad civil de vehículos (31) y accidentes personales (06), con su código en cada cobertura.</li>
+    <li><b>RCV obligatorio intacto:</b> sigue siendo del propietario de la moto según la Ley de Transporte Terrestre. Rodar lo verifica y cubre la actividad de reparto por encima de ese límite.</li>
+    <li><b>Producto:</b> requiere un condicionado de póliza colectiva con activación por turno aprobado por la SUDEASEG. Es el primer paso del piloto.</li>
+    <li><b>Datos personales:</b> la verificación pública muestra solo iniciales, placa y estado de la cobertura.</li>
+  </ul>
+  <h2>Aplicabilidad en Venezuela</h2>
+  <ul>
+    <li><b>Responde a una obligación vigente</b> del INTT para plataformas de delivery y viajes, y puede alimentar la consulta nacional abierta en octubre de 2026.</li>
+    <li><b>Se distribuye por un canal que ya existe:</b> las apps de delivery, sin red de ventas.</li>
+    <li><b>Sirve a plataformas grandes y pequeñas:</b> la integración es una API de tres llamadas.</li>
+  </ul>
+  <figure style="margin-top:4mm"><img src="img/plat-api.png" alt=""><figcaption><b>Integración:</b> abrir turno, marcar pasajero a bordo y cerrar turno.</figcaption></figure>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>8</span></div>
+</section>
+
+<!-- 9. Negocio y ruta -->
+<section class="pagina">
+  <div class="seccion">Modelo de negocio</div>
+  <h1>Cómo crece Rodar</h1>
+  <table>
+    <tr><th style="width:32%">Fuente de ingresos</th><th>Descripción</th></tr>
+    <tr><td><b>Comisión tecnológica</b></td><td>Un porcentaje de la prima por hora, acordado con la aseguradora por operar el canal.</td></tr>
+    <tr><td><b>Suscripción de la plataforma</b></td><td>Panel de flota, constancias, control de requisitos y API.</td></tr>
+    <tr><td><b>Datos de riesgo agregados</b></td><td>Reportes de siniestralidad por hora y zona para la aseguradora, sin datos personales.</td></tr>
+  </table>
+  <h2>Por qué ahora</h2>
+  <ul>
+    <li>La obligación del INTT es de agosto de 2026 y no existe un producto pensado para el trabajo por turnos.</li>
+    <li>El delivery ya funciona por apps, que son el canal natural de distribución.</li>
+    <li>Cada turno deja horas, zona y franja: la base para tarificar por riesgo real.</li>
+  </ul>
+  <h2>Hoja de ruta</h2>
+  <table>
+    <tr><th style="width:22%">Fase</th><th>Qué</th></tr>
+    <tr><td><b>Hoy</b></td><td>Prototipo en línea: app del repartidor, panel de la plataforma, panel de la aseguradora y verificación pública.</td></tr>
+    <tr><td><b>0–3 meses</b></td><td>Validación con 2–3 plataformas y 1 aseguradora; diseño del condicionado por turno.</td></tr>
+    <tr><td><b>3–6 meses</b></td><td>Piloto con una plataforma: API en producción, facturación mensual por horas y constancias.</td></tr>
+    <tr><td><b>6–12 meses</b></td><td>Tarifa por zona y franja; más plataformas (mototaxi, encomiendas, mensajería).</td></tr>
+    <tr><td><b>12+ meses</b></td><td>El mismo modelo para otros trabajos por plataforma: conductores de carro y técnicos a domicilio.</td></tr>
+  </table>
+  <h2>Métricas del piloto</h2>
+  <ul>
+    <li>% de la flota activa con cobertura en cada turno, y horas cubiertas por mes</li>
+    <li>Costo por repartidor activo frente a la póliza fija</li>
+    <li>Tiempo de reporte y de primer contacto en un siniestro</li>
+    <li>Siniestralidad por hora expuesta y verificaciones hechas en la calle</li>
+  </ul>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>9</span></div>
+</section>
+
+<!-- 10. Estado -->
+<section class="pagina">
+  <div class="seccion">Estado actual</div>
+  <h1>Un prototipo que ya se puede probar</h1>
+  <p class="intro">El prototipo está en línea en <b>rodar-seguros.vercel.app</b>. Lo que se hace como repartidor aparece al instante en los paneles de la plataforma y de la aseguradora.</p>
+  <h2>Qué está construido</h2>
+  <table>
+    <tr><th style="width:26%">Vista</th><th>Funcionalidades</th></tr>
+    <tr><td><b>Repartidor</b></td><td>Iniciar y terminar turno, costo por minuto con tope diario, pasajero a bordo, código de verificación, reporte de accidente en 3 pasos con clave de atención médica, historial semanal.</td></tr>
+    <tr><td><b>Plataforma</b></td><td>Repartidores cubiertos en vivo, filtros de flota y alertas de requisitos, cumplimiento INTT, constancia imprimible, comparación con póliza fija, siniestros e integración por API.</td></tr>
+    <tr><td><b>Aseguradora</b></td><td>Exposición por hora, prima devengada, siniestralidad, mapa de siniestros por día y franja, aprobación y pago de siniestros, plataformas aseguradas.</td></tr>
+    <tr><td><b>Verificación</b></td><td>Consulta pública por código: cobertura vigente, terminada o código inexistente.</td></tr>
+  </table>
+  <div class="destacado">Empresas, personas, precios y códigos del prototipo son <b>ficticios o referenciales</b>. Las cifras de ahorro sirven para ilustrar el modelo y deben validarse con datos reales de una plataforma.</div>
+  <h2>Fuentes</h2>
+  <ul style="font-size:8.6pt">
+    <li>INTT, requisitos para empresas de delivery (agosto de 2026): El Universal; NotiFalcón; Efecto Cocuyo.</li>
+    <li>INTT, consulta nacional a motorizados (22 de octubre de 2026): El Impulso; Analítica.</li>
+    <li>Cavecom-e, costos de los seguros obligatorios y motos en delivery: Finanzas Digital (2026).</li>
+    <li>Motorizados en accidentes de tránsito: El Diario; Observatorio de Seguridad Vial.</li>
+    <li>RCV obligatorio, Gaceta Oficial Extraordinaria N° 6.835: El Diario (2025).</li>
+  </ul>
+  <div class="pie"><span>Rodar · AseguraTech26</span><span>10</span></div>
+</section>
+
+</body>
+</html>
